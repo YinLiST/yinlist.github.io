@@ -1,0 +1,54 @@
+{
+  "announcements": [
+    {
+      "id": 1,
+      "title": "网站正式上线",
+      "content": "欢迎来到影特驿站！经过长时间的筹备和开发，个人网站终于正式上线了。这里将分享我的创作心得、项目作品以及生活点滴。",
+      "icon": "https://picsum.photos/400/200?random=1",
+      "category": "news",
+      "categoryName": "新闻",
+      "date": "2024-01-15 10:30",
+      "createdAt": "2024-01-15 10:30"
+    },
+    {
+      "id": 2,
+      "title": "新功能上线",
+      "content": "网站新增了作品展示功能和公告系统，您可以更方便地了解我的最新动态和项目作品。",
+      "icon": "https://picsum.photos/400/200?random=2",
+      "category": "update",
+      "categoryName": "更新",
+      "date": "2024-01-20 14:15",
+      "createdAt": "2024-01-20 14:15"
+    },
+    {
+      "id": 3,
+      "title": "新年特惠活动",
+      "content": "为庆祝新年，我们特别推出限时优惠活动，所有项目服务享受八折优惠，欢迎咨询！",
+      "icon": "https://picsum.photos/400/200?random=3",
+      "category": "activity",
+      "categoryName": "活动",
+      "date": "2024-02-01 09:00",
+      "createdAt": "2024-02-01 09:00"
+    },
+    {
+      "id": 4,
+      "title": "项目案例更新",
+      "content": "新增三个优秀项目案例，包括企业官网、数据可视化平台和电商系统，欢迎浏览！",
+      "icon": "https://picsum.photos/400/200?random=4",
+      "category": "news",
+      "categoryName": "新闻",
+      "date": "2024-02-10 16:45",
+      "createdAt": "2024-02-10 16:45"
+    },
+    {
+      "id": 5,
+      "title": "界面优化升级",
+      "content": "网站界面进行全面优化，提升用户体验，增加响应式设计支持，适配各种设备。",
+      "icon": "https://picsum.photos/400/200?random=5",
+      "category": "update",
+      "categoryName": "更新",
+      "date": "2024-02-15 11:20",
+      "createdAt": "2024-02-15 11:20"
+    }
+  ]
+}
