@@ -222,6 +222,13 @@
             font-size: 8rem;
             color: white;
             box-shadow: 0 20px 60px rgba(var(--secondary-rgb), 0.3);
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .projects-grid {
@@ -627,7 +634,9 @@
                 latest3.forEach(item => {
                     const card = document.createElement('div');
                     card.className = 'project-card';
-                    const tagsHtml = item.tags.map(tag => `<span>${tag}</span>`).join('');
+                    const tags = [item.lv1, item.lv2, item.lv3].filter(Boolean);
+                    const tagsHtml = tags.map(tag => `<span>${tag}</span>`).join('');
+                    const plainDescription = item.description.replace(/<[^>]*>/g, '');
                     card.innerHTML = `
                         <div class="project-image"><img src="${item.icon}" alt="${item.title}"></div>
                         <div class="project-info">
@@ -636,7 +645,7 @@
                                 <span class="meta-update">${item.updatedDate} 更新</span>
                             </div>
                             <h3>${item.title}</h3>
-                            <p>${item.description.substring(0, 30)}...</p>
+                            <p>${plainDescription.substring(0, 30)}...</p>
                             <div class="project-tags">${tagsHtml}</div>
                             <a href="projects.html" class="view-more-btn">查看更多 →</a>
                         </div>
