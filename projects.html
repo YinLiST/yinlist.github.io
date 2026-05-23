@@ -34,6 +34,20 @@
             padding: 1rem 2rem;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-right {
+            font-size: 0.9rem;
+            color: rgba(var(--primary-rgb), 0.9);
         }
 
         nav ul {
@@ -495,12 +509,14 @@
 </head>
 <body>
     <nav>
+        <div class="nav-left">影特驿站</div>
         <ul>
             <li><a href="index.html">主页</a></li>
             <li><a href="announcements.html">公告</a></li>
             <li><a href="projects.html" class="active">作品</a></li>
             <li><a href="about.html">关于</a></li>
         </ul>
+        <div class="nav-right" id="current-time"></div>
     </nav>
 
     <header class="page-header">
@@ -699,6 +715,21 @@
         }
 
         loadProjects();
+
+        function updateTime() {
+            const now = new Date();
+            const weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const weekDay = weekDays[now.getDay()];
+            document.getElementById('current-time').textContent = `${year}-${month}-${day} ${weekDay} ${hours}:${minutes}:${seconds}`;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
     </script>
 </body>
 </html>
