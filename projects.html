@@ -655,6 +655,13 @@
                 filtered = filtered.filter(item => item.lv3 === currentLv3);
             }
 
+            filtered.sort((a, b) => {
+                const dateA = new Date(a.publishedDate.replace(' ??:??', ''));
+                const dateB = new Date(b.publishedDate.replace(' ??:??', ''));
+                return dateB - dateA;
+            });
+
+            let globalIndex = 1;
             filtered.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'project-card';
@@ -671,6 +678,8 @@
                     linksHtml += '</div>';
                 }
                 
+                const idsDisplay = item.ids ? item.ids.join(', ') : `#${globalIndex}`;
+                
                 card.innerHTML = `
                     <div class="project-image"><img src="${item.icon}" alt="${item.title}"></div>
                     <div class="project-info">
@@ -678,13 +687,14 @@
                             <span class="meta-date">${item.publishedDate}</span>
                             ${item.updatedDate ? `<span class="meta-update">${item.updatedDate} 更新</span>` : ''}
                         </div>
-                        <h3>${item.title}</h3>
+                        <h3>[${idsDisplay}] ${item.title}</h3>
                         <p>${plainDescription}</p>
                         <div class="project-tags">${tagsHtml}</div>
                         ${linksHtml}
                     </div>
                 `;
                 container.appendChild(card);
+                globalIndex++;
             });
         }
 

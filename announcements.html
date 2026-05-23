@@ -392,11 +392,17 @@
             const container = document.getElementById('announcements-container');
             container.innerHTML = '';
 
-            const filtered = category === 'all' 
+            let filtered = category === 'all' 
                 ? allAnnouncements 
                 : allAnnouncements.filter(item => item.category === category);
 
-            filtered.forEach(item => {
+            filtered.sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return dateB - dateA;
+            });
+
+            filtered.forEach((item, index) => {
                 const card = document.createElement('article');
                 card.className = 'project-card';
                 card.dataset.category = item.category;
@@ -407,7 +413,7 @@
                             <span class="meta-date">${item.date}</span>
                             <span class="meta-tag">${item.categoryName}</span>
                         </div>
-                        <h3>${item.title}</h3>
+                        <h3>[${item.id}] ${item.title}</h3>
                         <p>${item.content}</p>
                         <a href="#" class="view-more-btn">查看详情 →</a>
                     </div>

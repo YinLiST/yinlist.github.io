@@ -600,7 +600,14 @@
                 const response = await fetch('/announcements.json');
                 const data = await response.json();
                 const container = document.getElementById('home-announcements');
-                const latest3 = data.announcements.slice(0, 3);
+                
+                const sorted = [...data.announcements].sort((a, b) => {
+                    const dateA = new Date(a.date);
+                    const dateB = new Date(b.date);
+                    return dateB - dateA;
+                });
+                
+                const latest3 = sorted.slice(0, 3);
 
                 latest3.forEach(item => {
                     const card = document.createElement('div');
@@ -612,7 +619,7 @@
                                 <span class="meta-date">${item.date}</span>
                                 <span class="meta-tag">${item.categoryName}</span>
                             </div>
-                            <h3>${item.title}</h3>
+                            <h3>[${item.id}] ${item.title}</h3>
                             <p>${item.content.substring(0, 50)}...</p>
                             <a href="announcements.html" class="view-more-btn">查看更多 →</a>
                         </div>
@@ -629,7 +636,14 @@
                 const response = await fetch('./projects.json');
                 const data = await response.json();
                 const container = document.getElementById('home-projects');
-                const latest3 = data.projects.slice(0, 3);
+                
+                const sorted = [...data.projects].sort((a, b) => {
+                    const dateA = new Date(a.publishedDate.replace(' ??:??', ''));
+                    const dateB = new Date(b.publishedDate.replace(' ??:??', ''));
+                    return dateB - dateA;
+                });
+                
+                const latest3 = sorted.slice(0, 3);
 
                 latest3.forEach(item => {
                     const card = document.createElement('div');
@@ -637,6 +651,8 @@
                     const tags = [item.lv1, item.lv2, item.lv3].filter(Boolean);
                     const tagsHtml = tags.map(tag => `<span>${tag}</span>`).join('');
                     const plainDescription = item.description.replace(/<[^>]*>/g, '');
+                    const idsDisplay = item.ids ? item.ids.join(', ') : '';
+                    const titleWithId = idsDisplay ? `[${idsDisplay}] ${item.title}` : item.title;
                     card.innerHTML = `
                         <div class="project-image"><img src="${item.icon}" alt="${item.title}"></div>
                         <div class="project-info">
@@ -644,7 +660,7 @@
                                 <span class="meta-date">${item.publishedDate}</span>
                                 <span class="meta-update">${item.updatedDate} 更新</span>
                             </div>
-                            <h3>${item.title}</h3>
+                            <h3>${titleWithId}</h3>
                             <p>${plainDescription.substring(0, 30)}...</p>
                             <div class="project-tags">${tagsHtml}</div>
                             <a href="projects.html" class="view-more-btn">查看更多 →</a>
