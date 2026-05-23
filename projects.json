@@ -1,0 +1,146 @@
+{
+  "projects": [
+    {
+      "ids": ["V1","V2"],
+      "title": "散人回家1~2部",
+      "description": "<p>IC自制图《散人回家》1~2部通关视频</p><p>共2P (1~2部)</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/a334a4244c804f0c9b8e589cb6127cb02d0d9e33.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "通关视频",
+      "lv3": "自作自收",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1UBGjzyEUH/"}
+      ],
+      "publishedDate": "2025-07-08 08:39",
+      "updatedDate": "2025-07-10 ??:??",
+      "createdAt": "2025-07-08 08:39"
+    },
+    {
+      "ids": ["V3"],
+      "title": "序数词系列",
+      "description": "IC玩家挑战地图合集《序数词系列》通关视频",
+      "icon": "https://i1.hdslb.com/bfs/archive/e090b96f21b8f2960f5105be8c4e4479e16375ec.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "通关视频",
+      "lv3": "玩家挑战",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV12jtJznErf/"}
+      ],
+      "publishedDate": "2025-08-05 12:58",
+      "updatedDate": "2025-08-05 12:58",
+      "createdAt": "2025-08-05 12:58"
+    },
+    {
+      "ids": ["V4"],
+      "title": "Easy Spike系列 (简单跳刺系列)",
+      "description": "IC玩家挑战地图合集《Easy Spike系列》 (简单跳刺系列) 通关视频",
+      "icon": "https://i1.hdslb.com/bfs/archive/59c71caea40fd515583001bb7d1eb56a5c774320.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "通关视频",
+      "lv3": "玩家挑战",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV12Jt9zjE8x/"}
+      ],
+      "publishedDate": "2025-08-12 15:47",
+      "updatedDate": "2025-08-12 15:47",
+      "createdAt": "2025-08-12 15:47"
+    }
+    {
+      "ids": ["V5"],
+      "title": "谷歌翻译20次IC难度标签",
+      "description": "<p>当IC难度标签遇到谷歌翻译，会发生什么？</p><p>内容仅供娱乐，请勿过分解读</p><p>本视频含AI创作内容，包括：翻译、配音，请酌情观看</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/d8386d8ec7a80dd3b71c599db533f737a4e8747e.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "整活",
+      "lv3": "当IC遇到翻译器！",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1VGeJz1Ezz"}
+      ],
+      "publishedDate": "2025-08-24 16:48",
+      "updatedDate": "2025-08-24 16:48",
+      "createdAt": "2025-08-24 16:48"
+    }
+    {
+      "ids": ["V6"],
+      "title": "谷歌翻译20次IC官图名称 (即将重制)",
+      "description": "<p>当IC官图名称遇到谷歌翻译，会发生什么？</p><p>内容仅供娱乐，请勿过分解读</p><p>本视频含AI创作内容，包括：翻译、配音，请酌情观看</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/d8386d8ec7a80dd3b71c599db533f737a4e8747e.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "整活",
+      "lv3": "当IC遇到翻译器！",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1VGeJz1Ezz"}
+      ],
+      "publishedDate": "2025-08-25 ??:??",
+      "updatedDate": "2025-08-25 ??:??",
+      "createdAt": "2025-08-25 ??:??"
+    }
+    {
+      "ids": ["V7"],
+      "title": "殷离ST的2025B站年度报告",
+      "description": "本视频为殷离ST的2025B站年度报告",
+      "icon": "https://i1.hdslb.com/bfs/archive/39057e43bb138f90b698cd172021a39f0cfdf6a6.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "杂项",
+      "lv2": "报告",
+      "lv3": "其他",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1j5BrBBEzd/"}
+      ],
+      "publishedDate": "2025-12-27 11:05",
+      "updatedDate": "2025-12-27 11:05",
+      "createdAt": "2025-12-27 11:05"
+    }
+    {
+      "ids": ["V8"],
+      "title": "第1期：《IC之周推降世》",
+      "description": "<p>IC每周挑战第1期通关视频</p><p>共6张地图</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/c0ba5c61ebdfac0ebe9423051c1c846e24e3bfb0.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "通关视频",
+      "lv3": "每周挑战",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1ekvZBkELx/"}
+      ],
+      "publishedDate": "2025-01-02 13:16",
+      "updatedDate": "2025-01-02 13:16",
+      "createdAt": "2025-01-02 13:16"
+    }  {
+      "ids": ["V9"],
+      "title": "第2期",
+      "description": "<p>IC每周挑战第2期通关视频</p><p>共6张地图</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/c0ba5c61ebdfac0ebe9423051c1c846e24e3bfb0.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "通关视频",
+      "lv3": "每周挑战",
+      "links": [
+        {"title": "B站", "url": "https://i1.hdslb.com/bfs/archive/db6203b8a9ec6967b6548759dc9d3c192dd42fac.jpg@672w_378h_1c.avif"}
+      ],
+      "publishedDate": "2025-01-02 13:18",
+      "updatedDate": "2025-01-02 13:18",
+      "createdAt": "2025-01-02 13:18"
+    }  {
+      "ids": ["V10"],
+      "title": "第3期",
+      "description": "<p>IC每周挑战第3期通关视频</p><p>共6张地图</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/327e16957739d0d9fc42bdde86f2aa5e7419a6c9.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "通关视频",
+      "lv3": "每周挑战",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1zvvZB7E6a/"}
+      ],
+      "publishedDate": "2025-01-02 13:20",
+      "updatedDate": "2025-01-02 13:20",
+      "createdAt": "2025-01-02 13:20"
+    }
+  ]
+}
