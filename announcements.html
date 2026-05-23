@@ -377,7 +377,7 @@
 
         async function loadAnnouncements() {
             try {
-                const response = await fetch('/announcements.json');
+                const response = await fetch('announcements.json');
                 const data = await response.json();
                 allAnnouncements = data.announcements;
                 renderAnnouncements('all');
