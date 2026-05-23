@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影特驿站 - 殷离ST的个人网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: rgb(192, 192, 192);
+            --secondary: rgb(64, 64, 64);
+            --primary-rgb: 192, 192, 192;
+            --secondary-rgb: 64, 64, 64;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(var(--secondary-rgb), 0.95);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: rgba(var(--primary-rgb), 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: sans-serif;
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            opacity: 0.8;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--secondary);
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        @keyframes scroll {
+            0% { opacity: 1; top: 10px; }
+            100% { opacity: 0; top: 25px; }
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        #about {
+            background: rgb(255, 255, 255);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--secondary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: white;
+            box-shadow: 0 20px 60px rgba(var(--secondary-rgb), 0.3);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(var(--secondary-rgb), 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-family: sans-serif;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info p {
+            font-family: sans-serif;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-tags span {
+            background: rgba(var(--primary-rgb), 0.3);
+            color: var(--secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .meta-date {
+            color: #888;
+            font-family: sans-serif;
+        }
+
+        .meta-update {
+            color: var(--secondary);
+            font-family: sans-serif;
+            background: rgba(var(--primary-rgb), 0.3);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        .meta-tag {
+            color: var(--secondary);
+            font-family: sans-serif;
+            background: rgba(var(--primary-rgb), 0.3);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        .view-more-btn {
+            font-family: sans-serif;
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.2rem;
+            background: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .view-more-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        #contact {
+            background: rgb(255, 255, 255);
+            color: var(--secondary);
+        }
+
+        #contact .section-title {
+            color: var(--secondary);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(var(--secondary-rgb), 0.1);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item a {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+        }
+
+        .contact-item:hover {
+            background: rgba(var(--secondary-rgb), 0.2);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-icon.bilibili {
+            background: #FB7299;
+        }
+
+        .contact-icon.bilibili::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 12px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-left: 2px;
+        }
+
+        .contact-text h4 {
+            font-family: sans-serif;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text p {
+            font-family: sans-serif;
+            color: rgba(var(--secondary-rgb), 0.8);
+        }
+
+        footer {
+            background: rgba(var(--secondary-rgb), 0.95);
+            color: var(--primary);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .project-card {
+                border-radius: 12px;
+            }
+
+            .project-image {
+                height: 150px;
+                font-size: 3rem;
+            }
+
+            .project-info {
+                padding: 1rem;
+            }
+
+            .project-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .project-info p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="announcements.html">公告</a></li>
+            <li><a href="projects.html">作品</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>欢迎来到影特驿站</h1>
+            <p>殷离ST的个人网站</p>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section id="announcements">
+        <h2 class="section-title">公告</h2>
+        <div class="projects-grid" id="home-announcements">
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">作品展示</h2>
+        <div class="projects-grid" id="home-projects">
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">关于本人和网站</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>影特能量，威力巨大</p>
+                <p>高二/物化地/I人/杂食区</p>
+                <p>目前主更IC相关稿件</p>
+                <p>暂无个人群聊，暂不接商业合作</p>
+                <p>学业原因，更新较慢，敬请谅解！</p>
+                <p>本网站使用Trae AI制作，使用模型：MiniMax-M2.1</p>
+            </div>
+            <div class="about-image">
+                <img src="https://i2.hdslb.com/bfs/face/693de931c161f166719680678e91e2fd58a7d568.jpg@240w_240h_1c_1s_!web-avatar-nav.webp" alt="头像">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">联系我</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="https://space.bilibili.com/509101466" target="_blank">
+                        <div class="contact-icon bilibili"></div>
+                        <div class="contact-text">
+                            <h4>B站</h4>
+                            <p>@殷离ST UID:509101466</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 殷离ST</p>
+        <p>使用Trae AI制作，使用模型：MiniMax-M2.1</p>
+    </footer>
+
+    <script>
+        async function loadAnnouncements() {
+            try {
+                const response = await fetch('announcements.json');
+                const data = await response.json();
+                const container = document.getElementById('home-announcements');
+                const latest3 = data.announcements.slice(0, 3);
+
+                latest3.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    card.innerHTML = `
+                        <div class="project-image"><img src="${item.icon}" alt="${item.title}"></div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="meta-date">${item.date}</span>
+                                <span class="meta-tag">${item.categoryName}</span>
+                            </div>
+                            <h3>${item.title}</h3>
+                            <p>${item.content.substring(0, 50)}...</p>
+                            <a href="announcements.html" class="view-more-btn">查看更多 →</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('加载公告失败:', error);
+            }
+        }
+
+        async function loadProjects() {
+            try {
+                const response = await fetch('projects.json');
+                const data = await response.json();
+                const container = document.getElementById('home-projects');
+                const latest3 = data.projects.slice(0, 3);
+
+                latest3.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    const tagsHtml = item.tags.map(tag => `<span>${tag}</span>`).join('');
+                    card.innerHTML = `
+                        <div class="project-image"><img src="${item.icon}" alt="${item.title}"></div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="meta-date">${item.publishedDate}</span>
+                                <span class="meta-update">${item.updatedDate} 更新</span>
+                            </div>
+                            <h3>${item.title}</h3>
+                            <p>${item.description.substring(0, 30)}...</p>
+                            <div class="project-tags">${tagsHtml}</div>
+                            <a href="projects.html" class="view-more-btn">查看更多 →</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('加载作品失败:', error);
+            }
+        }
+
+        loadAnnouncements();
+        loadProjects();
+    </script>
+</body>
+</html>
