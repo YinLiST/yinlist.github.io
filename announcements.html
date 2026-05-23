@@ -360,9 +360,7 @@
     <main class="container">
         <div class="category-tabs">
             <button class="category-tab active" data-category="all">全部</button>
-            <button class="category-tab" data-category="news">新闻</button>
-            <button class="category-tab" data-category="update">更新</button>
-            <button class="category-tab" data-category="activity">活动</button>
+            <button class="category-tab" data-category="作品发布">作品发布</button>
         </div>
 
         <div class="announcements-list" id="announcements-container">
@@ -394,7 +392,7 @@
 
             let filtered = category === 'all' 
                 ? allAnnouncements 
-                : allAnnouncements.filter(item => item.category === category);
+                : allAnnouncements.filter(item => item.categoryName === category);
 
             filtered.sort((a, b) => {
                 const dateA = new Date(a.date);
