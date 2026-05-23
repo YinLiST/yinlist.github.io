@@ -597,7 +597,7 @@
     <script>
         async function loadAnnouncements() {
             try {
-                const response = await fetch('announcements.json');
+                const response = await fetch('/announcements.json');
                 const data = await response.json();
                 const container = document.getElementById('home-announcements');
                 const latest3 = data.announcements.slice(0, 3);
@@ -626,7 +626,7 @@
 
         async function loadProjects() {
             try {
-                const response = await fetch('projects.json');
+                const response = await fetch('/projects.json');
                 const data = await response.json();
                 const container = document.getElementById('home-projects');
                 const latest3 = data.projects.slice(0, 3);
