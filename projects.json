@@ -18,7 +18,7 @@
     },
     {
       "ids": ["V3"],
-      "title": "序数词系列",
+      "title": "[30] 序数词系列",
       "description": "IC玩家挑战地图合集《序数词系列》通关视频",
       "icon": "https://i1.hdslb.com/bfs/archive/e090b96f21b8f2960f5105be8c4e4479e16375ec.jpg@672w_378h_1c.avif",
       "lv0": "视频",
@@ -34,8 +34,8 @@
     },
     {
       "ids": ["V4"],
-      "title": "Easy Spike系列 (简单跳刺系列)",
-      "description": "IC玩家挑战地图合集《Easy Spike系列》 (简单跳刺系列) 通关视频",
+      "title": "[40-] Easy Spike系列 (简单跳刺系列)",
+      "description": "<p>IC玩家挑战地图合集《Easy Spike系列》 (简单跳刺系列) 通关视频</p><p>共2P (上下)</p>",
       "icon": "https://i1.hdslb.com/bfs/archive/59c71caea40fd515583001bb7d1eb56a5c774320.jpg@672w_378h_1c.avif",
       "lv0": "视频",
       "lv1": "IC",
@@ -81,7 +81,7 @@
       "createdAt": "2025-08-25 ??:??"
     }
     {
-      "ids": ["V7"],
+      "ids": ["V+1"],
       "title": "殷离ST的2025B站年度报告",
       "description": "本视频为殷离ST的2025B站年度报告",
       "icon": "https://i1.hdslb.com/bfs/archive/39057e43bb138f90b698cd172021a39f0cfdf6a6.jpg@672w_378h_1c.avif",
@@ -97,8 +97,8 @@
       "createdAt": "2025-12-27 11:05"
     }
     {
-      "ids": ["V8"],
-      "title": "第1期：《IC之周推降世》",
+      "ids": ["V7"],
+      "title": "[10] 第1期：《IC之周推降世》",
       "description": "<p>IC每周挑战第1期通关视频</p><p>共6张地图</p>",
       "icon": "https://i1.hdslb.com/bfs/archive/c0ba5c61ebdfac0ebe9423051c1c846e24e3bfb0.jpg@672w_378h_1c.avif",
       "lv0": "视频",
@@ -108,12 +108,13 @@
       "links": [
         {"title": "B站", "url": "https://www.bilibili.com/video/BV1ekvZBkELx/"}
       ],
-      "publishedDate": "2025-01-02 13:16",
-      "updatedDate": "2025-01-02 13:16",
-      "createdAt": "2025-01-02 13:16"
-    }  {
-      "ids": ["V9"],
-      "title": "第2期",
+      "publishedDate": "2026-01-02 13:16",
+      "updatedDate": "2026-01-02 13:16",
+      "createdAt": "2026-01-02 13:16"
+    } 
+    {
+      "ids": ["V8"],
+      "title": "[10+] 第2期",
       "description": "<p>IC每周挑战第2期通关视频</p><p>共6张地图</p>",
       "icon": "https://i1.hdslb.com/bfs/archive/c0ba5c61ebdfac0ebe9423051c1c846e24e3bfb0.jpg@672w_378h_1c.avif",
       "lv0": "视频",
@@ -123,12 +124,13 @@
       "links": [
         {"title": "B站", "url": "https://i1.hdslb.com/bfs/archive/db6203b8a9ec6967b6548759dc9d3c192dd42fac.jpg@672w_378h_1c.avif"}
       ],
-      "publishedDate": "2025-01-02 13:18",
-      "updatedDate": "2025-01-02 13:18",
-      "createdAt": "2025-01-02 13:18"
-    }  {
-      "ids": ["V10"],
-      "title": "第3期",
+      "publishedDate": "2026-01-02 13:18",
+      "updatedDate": "2026-01-02 13:18",
+      "createdAt": "2026-01-02 13:18"
+    }  
+    {
+      "ids": ["V9"],
+      "title": "[10+] 第3期",
       "description": "<p>IC每周挑战第3期通关视频</p><p>共6张地图</p>",
       "icon": "https://i1.hdslb.com/bfs/archive/327e16957739d0d9fc42bdde86f2aa5e7419a6c9.jpg@672w_378h_1c.avif",
       "lv0": "视频",
@@ -138,9 +140,137 @@
       "links": [
         {"title": "B站", "url": "https://www.bilibili.com/video/BV1zvvZB7E6a/"}
       ],
-      "publishedDate": "2025-01-02 13:20",
-      "updatedDate": "2025-01-02 13:20",
-      "createdAt": "2025-01-02 13:20"
+      "publishedDate": "2026-01-02 13:20",
+      "updatedDate": "2026-01-02 13:20",
+      "createdAt": "2026-01-02 13:20"
+    }
+    {
+      "ids": ["V10"],
+      "title": "内置/官方关卡（截至2.782版本）",
+      "description": "<p>IC内置/官方关卡信息统计视频</p><p>截至IC 2.782版本</p><p>2026/2/15 发布初版</p><p>2026/4/11 第6次换源</p>",
+      "icon": "https://i0.hdslb.com/bfs/archive/8b8b81f2ca244745b3e032636356414941f38e27.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "信息统计",
+      "lv3": "游戏地图",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1wVZxBXEtG/"}
+      ],
+      "publishedDate": "2026-02-15 18:44",
+      "updatedDate": "2026-04-11 ??:??",
+      "createdAt": "2026-02-15 18:44"
+    }
+    {
+      "ids": ["V11"],
+      "title": "[20-/20+] 第4~5期",
+      "description": "<p>IC每周挑战第4~5期通关视频</p><p>共10张地图 (其中第4期共5张，第5期共5张)</p>",
+      "icon": "https://i2.hdslb.com/bfs/archive/c4926924733288f3fd4896566663189592662ce9.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "通关视频",
+      "lv3": "每周挑战",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1psf7BKEge/"}
+      ],
+      "publishedDate": "2026-02-21 17:04",
+      "updatedDate": "2026-02-21 17:04",
+      "createdAt": "2026-02-21 17:04"
+    }
+    {
+      "ids": ["V12"],
+      "title": "Lines (连线) 经典模式简单难度",
+      "description": "<p>游戏《Puzzlerama》(《拼图连线》) Lines (连线) 经典模式简单难度通关视频</p><p>共100关</p>",
+      "icon": "https://i2.hdslb.com/bfs/archive/04b250beda98cc92f8b1fc3fc9a8de2ad16a3647.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "小游戏",
+      "lv2": "Puzzlerama",
+      "lv3": "Lines (连线)",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1T9A6zJErs/"}
+      ],
+      "publishedDate": "2026-02-26 17:25",
+      "updatedDate": "2026-02-26 17:25",
+      "createdAt": "2026-02-26 17:25"
+    }
+    {
+      "ids": ["V13"],
+      "title": "不完美平衡1 (Imperfect Balance)",
+      "description": "<p>游戏《不完美平衡1》(《Imperfect Balance》) 通关视频</p><p>共12大关（1~8+XYZ大关），每大关有5小关，共60小关</p><p>共2P (1~8 + XYZ)</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/2b6d8002d8bb1414562c604dd63d7c8788031252.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "小游戏",
+      "lv2": "Ttrusas",
+      "lv3": "不完美平衡",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV18gAhzZEaH/"}
+      ],
+      "publishedDate": "2026-02-28 15:50",
+      "updatedDate": "2026-02-28 15:50",
+      "createdAt": "2026-02-28 15:50"
+    }
+    {
+      "ids": ["V14"],
+      "title": "不完美平衡2 (Imperfect Balance 2)",
+      "description": "<p>游戏《不完美平衡2》(《Imperfect Balance 2》) 通关视频</p><p>共15大关，每大关有3小关，共45小关</p><p>共2P (1~9 + 10~15)</p>",
+      "icon": "https://i1.hdslb.com/bfs/archive/f3b71757093955202dec577aea90799511eb656d.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "小游戏",
+      "lv2": "Ttrusas",
+      "lv3": "不完美平衡",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1ZqAdzLEb3/"}
+      ],
+      "publishedDate": "2026-03-03 11:14",
+      "updatedDate": "2026-03-03 11:14",
+      "createdAt": "2026-03-03 11:14"
+    }
+    {
+      "ids": ["V15"],
+      "title": "游戏音乐（截至2.782版本，即将重制）",
+      "description": "<p>IC游戏音乐信息统计视频</p><p>截至IC 2.782版本</p><p>2026/3/28 发布初版</p><p>2026/4/12 第2次换源</p>",
+      "icon": "https://i0.hdslb.com/bfs/archive/828beaedbbb3b6dc1a687d12991ed452341514a7.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "信息统计",
+      "lv3": "游戏要素",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1VDX5BcE28/"}
+      ],
+      "publishedDate": "2026-03-28 17:15",
+      "updatedDate": "2026-04-12 ??:??",
+      "createdAt": "2026-03-28 17:15"
+    }
+    {
+      "ids": ["V16"],
+      "title": "黑榜！千万别用这5种机型游玩《我想成为创造者》！",
+      "description": "<p>Top 5 不推荐游玩IC的设备</p><p>灵感来源：B站UP主 Bleap闪音跃动</p><p>整活视频，内容仅供娱乐，请勿过分解读</p>",
+      "icon": "https://i2.hdslb.com/bfs/archive/e3268a5729e3ce3474460a74e11a880a3280278d.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "整活",
+      "lv3": "其他",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV1H4SZB9E3w/"}
+      ],
+      "publishedDate": "2026-04-06 13:37",
+      "updatedDate": "2026-04-06 13:37",
+      "createdAt": "2026-04-06 13:37"
+    }
+    {
+      "ids": ["V17"],
+      "title": "游戏音效（截至2.782版本）",
+      "description": "<p>IC游戏音效信息统计视频</p><p>截至IC 2.782版本</p><p>2026/5/2 发布初版</p><p>2026/5/2 第0次换源</p>",
+      "icon": "https://i2.hdslb.com/bfs/archive/3444aabf5ec4026480f7efa2e2d610ad0080a840.jpg@672w_378h_1c.avif",
+      "lv0": "视频",
+      "lv1": "IC",
+      "lv2": "信息统计",
+      "lv3": "游戏要素",
+      "links": [
+        {"title": "B站", "url": "https://www.bilibili.com/video/BV192RLBBEoQ/"}
+      ],
+      "publishedDate": "2026-05-02 16:40",
+      "updatedDate": "2026-05-02 16:40",
+      "createdAt": "2026-05-02 16:40"
     }
   ]
 }

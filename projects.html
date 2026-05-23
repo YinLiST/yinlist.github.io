@@ -549,6 +549,8 @@
                 const data = await response.json();
                 allProjects = data.projects;
                 
+                initializeCategorySelectors();
+                
                 document.getElementById('lv0-category').addEventListener('change', (e) => {
                     currentLv0 = e.target.value;
                     currentLv1 = 'all';
@@ -585,6 +587,12 @@
             } catch (error) {
                 console.error('加载作品失败:', error);
             }
+        }
+
+        function initializeCategorySelectors() {
+            updateSelectOptions('lv1-category', getLv1Categories(currentLv0));
+            updateSelectOptions('lv2-category', getLv2Categories(currentLv0, currentLv1));
+            updateSelectOptions('lv3-category', getLv3Categories(currentLv0, currentLv1, currentLv2));
         }
 
         function getLv1Categories(lv0) {
