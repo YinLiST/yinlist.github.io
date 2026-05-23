@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 - 影特驿站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: rgb(192, 192, 192);
+            --secondary: rgb(64, 64, 64);
+            --primary-rgb: 192, 192, 192;
+            --secondary-rgb: 64, 64, 64;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: rgb(255, 255, 255);
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(var(--secondary-rgb), 0.95);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: rgba(var(--primary-rgb), 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: rgb(255, 255, 255);
+        }
+
+        .page-header {
+            padding: 8rem 2rem 3rem;
+            text-align: center;
+            background: rgb(255, 255, 255);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.05) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        .page-cover {
+            width: 120px;
+            height: 120px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 40px rgba(var(--secondary-rgb), 0.3);
+        }
+
+        .page-cover {
+            width: 120px;
+            height: 120px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 40px rgba(var(--secondary-rgb), 0.3);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .page-header h1 {
+            font-family: sans-serif;
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-family: sans-serif;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .about-text h2 {
+            font-family: sans-serif;
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-text p {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(var(--secondary-rgb), 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-section {
+            margin-top: 4rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(var(--secondary-rgb), 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(var(--primary-rgb), 0.3);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(var(--secondary-rgb), 0.2);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-family: sans-serif;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            font-family: sans-serif;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: rgba(var(--secondary-rgb), 0.95);
+            color: var(--primary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                gap: 0.4rem;
+            }
+
+            .about-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-image {
+                width: 160px;
+                height: 160px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .page-header {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .about-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .about-text h2 {
+                font-size: 1.6rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .info-card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 3rem auto 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(var(--secondary-rgb), 0.1);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item a {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+        }
+
+        .contact-item:hover {
+            background: rgba(var(--secondary-rgb), 0.2);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-icon.bilibili {
+            background: #FB7299;
+        }
+
+        .contact-icon.bilibili::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 12px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-left: 2px;
+        }
+
+        .contact-text h4 {
+            font-family: sans-serif;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text p {
+            font-family: sans-serif;
+            color: rgba(var(--secondary-rgb), 0.8);
+        }
+
+        .section-title {
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="announcements.html">公告</a></li>
+            <li><a href="projects.html">作品</a></li>
+            <li><a href="about.html" class="active">关于</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h2 class="section-title">关于本人和网站</h2>
+            <div class="about-image">
+                <img src="https://i2.hdslb.com/bfs/face/693de931c161f166719680678e91e2fd58a7d568.jpg@240w_240h_1c_1s_!web-avatar-nav.webp" alt="头像">
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>影特能量，威力巨大</p>
+                    <p>高二/物化地/I人/杂食区</p>
+                    <p>目前主更IC相关稿件</p>
+                    <p>暂无个人群聊，暂不接商业合作</p>
+                    <p>学业原因，更新较慢，敬请谅解！</p>
+                    <p>本网站使用Trae AI制作，使用模型：MiniMax-M2.1</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">联系我</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <a href="https://space.bilibili.com/509101466" target="_blank">
+                            <div class="contact-icon bilibili"></div>
+                            <div class="contact-text">
+                                <h4>B站</h4>
+                                <p>@殷离ST UID:509101466</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 殷离ST</p>
+        <p>使用Trae AI制作，使用模型：MiniMax-M2.1</p>
+    </footer>
+</body>
+</html>
