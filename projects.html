@@ -650,7 +650,9 @@
             filtered.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'project-card';
-                const tagsHtml = (item.tags || []).map(tag => `<span>${tag}</span>`).join('');
+                const tags = [item.lv1, item.lv2, item.lv3].filter(Boolean);
+                const tagsHtml = tags.map(tag => `<span>${tag}</span>`).join('');
+                const plainDescription = item.description.replace(/<[^>]*>/g, '');
                 
                 let linksHtml = '';
                 if (item.links && item.links.length > 0) {
@@ -669,7 +671,7 @@
                             ${item.updatedDate ? `<span class="meta-update">${item.updatedDate} 更新</span>` : ''}
                         </div>
                         <h3>${item.title}</h3>
-                        <p>${item.description}</p>
+                        <p>${plainDescription}</p>
                         <div class="project-tags">${tagsHtml}</div>
                         ${linksHtml}
                     </div>
