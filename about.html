@@ -486,7 +486,6 @@
         <div class="nav-left">影特驿站</div>
         <ul>
             <li><a href="index.html">主页</a></li>
-            <li><a href="announcements.html">公告</a></li>
             <li><a href="projects.html">作品</a></li>
             <li><a href="about.html" class="active">关于</a></li>
         </ul>
@@ -502,9 +501,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>影特能量，威力巨大</p>
-                    <p>高二/物化地/I人/杂食区</p>
-                    <p>目前主更IC相关稿件</p>
-                    <p>暂无个人群聊，暂不接商业合作</p>
+                    <p>高二(准高三)/物化地/I人/杂食区</p>
+                    <p>目前主更IC和小游戏相关稿件</p>
+                    <p>暂无个人群聊，暂不扩列，暂不接商业合作</p>
                     <p>学业原因，更新较慢，敬请谅解！</p>
                     <p>本网站使用Trae AI制作，使用模型：MiniMax-M2.1</p>
                     <div class="fans-goal">
@@ -569,24 +568,15 @@
         updateTime();
         setInterval(updateTime, 1000);
 
-        async function loadFansStats() {
-            try {
-                const mid = '509101466';
-                const response = await fetch(`https://api.bilibili.com/x/relation/stat?vmid=${mid}&jsonp=jsonp`);
-                const data = await response.json();
-                if (data.code === 0 && data.data) {
-                    const fans = data.data.follower;
-                    document.getElementById('fans-count').textContent = fans.toLocaleString() + ' 人';
-                    const targetFans = 100;
-                    const percentage = Math.min((fans / targetFans) * 100, 100);
-                    document.getElementById('fans-percent').textContent = percentage.toFixed(1) + '%';
-                    setTimeout(() => {
-                        document.getElementById('fans-bar').style.width = percentage + '%';
-                    }, 500);
-                }
-            } catch (error) {
-                document.getElementById('fans-count').textContent = '获取失败';
-            }
+        function loadFansStats() {
+            const fans = 55;
+            const targetFans = 100;
+            const percentage = Math.min((fans / targetFans) * 100, 100);
+            document.getElementById('fans-count').textContent = fans.toLocaleString() + ' 人';
+            document.getElementById('fans-percent').textContent = percentage.toFixed(1) + '%';
+            setTimeout(() => {
+                document.getElementById('fans-bar').style.width = percentage + '%';
+            }, 500);
         }
         loadFansStats();
     </script>
