@@ -37,22 +37,27 @@
             align-items: center;
         }
 
-        .nav-left {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: rgb(255, 255, 255);
-        }
-
-        .nav-right {
-            font-size: 0.9rem;
-            color: rgba(var(--primary-rgb), 0.9);
-        }
-
         nav ul {
             display: flex;
             justify-content: center;
             gap: 3rem;
             list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-left {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: rgb(255, 255, 255);
+            flex-shrink: 0;
+        }
+
+        .nav-right {
+            font-size: 0.9rem;
+            color: rgba(var(--primary-rgb), 0.9);
+            flex-shrink: 0;
         }
 
         nav a {
@@ -223,6 +228,42 @@
             font-size: 1.1rem;
             color: var(--secondary);
             margin-bottom: 1.5rem;
+        }
+
+        .fans-goal {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--secondary);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .fans-goal h4 {
+            font-family: sans-serif;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .fans-bar-container {
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .fans-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #fb7299, #ffa3b3);
+            border-radius: 10px;
+            width: 0;
+            transition: width 1s ease;
+        }
+
+        .fans-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
         }
 
         .about-image {
@@ -541,7 +582,7 @@
     <nav>
         <div class="nav-left">影特驿站</div>
         <ul>
-            <li><a href="index.html">主页</a></li>
+            <li><a href="index.html" class="active">主页</a></li>
             <li><a href="announcements.html">公告</a></li>
             <li><a href="projects.html">作品</a></li>
             <li><a href="about.html">关于</a></li>
@@ -581,6 +622,16 @@
                 <p>暂无个人群聊，暂不接商业合作</p>
                 <p>学业原因，更新较慢，敬请谅解！</p>
                 <p>本网站使用Trae AI制作，使用模型：MiniMax-M2.1</p>
+                <div class="fans-goal">
+                    <h4>🎯 B站粉丝目标：100</h4>
+                    <div class="fans-bar-container">
+                        <div class="fans-bar" id="fans-bar"></div>
+                    </div>
+                    <div class="fans-info">
+                        <span id="fans-count">加载中...</span>
+                        <span id="fans-percent">0%</span>
+                    </div>
+                </div>
             </div>
             <div class="about-image">
                 <img src="https://i2.hdslb.com/bfs/face/693de931c161f166719680678e91e2fd58a7d568.jpg@240w_240h_1c_1s_!web-avatar-nav.webp" alt="头像">
@@ -596,8 +647,17 @@
                     <a href="https://space.bilibili.com/509101466" target="_blank">
                         <div class="contact-icon bilibili"></div>
                         <div class="contact-text">
-                            <h4>B站</h4>
+                            <h4>B站大号</h4>
                             <p>@殷离ST UID:509101466</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://space.bilibili.com/3706999418128627" target="_blank">
+                        <div class="contact-icon bilibili"></div>
+                        <div class="contact-text">
+                            <h4>B站小号</h4>
+                            <p>@影特YL UID:3706999418128627</p>
                         </div>
                     </a>
                 </div>
@@ -691,6 +751,27 @@
 
         loadAnnouncements();
         loadProjects();
+
+        async function loadFansStats() {
+            try {
+                const mid = '509101466';
+                const response = await fetch(`https://api.bilibili.com/x/relation/stat?vmid=${mid}&jsonp=jsonp`);
+                const data = await response.json();
+                if (data.code === 0 && data.data) {
+                    const fans = data.data.follower;
+                    document.getElementById('fans-count').textContent = fans.toLocaleString() + ' 人';
+                    const targetFans = 100;
+                    const percentage = Math.min((fans / targetFans) * 100, 100);
+                    document.getElementById('fans-percent').textContent = percentage.toFixed(1) + '%';
+                    setTimeout(() => {
+                        document.getElementById('fans-bar').style.width = percentage + '%';
+                    }, 500);
+                }
+            } catch (error) {
+                document.getElementById('fans-count').textContent = '获取失败';
+            }
+        }
+        loadFansStats();
 
         function updateTime() {
             const now = new Date();

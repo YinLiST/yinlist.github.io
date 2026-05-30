@@ -39,22 +39,27 @@
             align-items: center;
         }
 
-        .nav-left {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: rgb(255, 255, 255);
-        }
-
-        .nav-right {
-            font-size: 0.9rem;
-            color: rgba(var(--primary-rgb), 0.9);
-        }
-
         nav ul {
             display: flex;
             justify-content: center;
             gap: 3rem;
             list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-left {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: rgb(255, 255, 255);
+            flex-shrink: 0;
+        }
+
+        .nav-right {
+            font-size: 0.9rem;
+            color: rgba(var(--primary-rgb), 0.9);
+            flex-shrink: 0;
         }
 
         nav a {
